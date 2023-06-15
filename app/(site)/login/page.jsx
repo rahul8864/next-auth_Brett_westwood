@@ -7,7 +7,7 @@ import { signIn, useSession } from 'next-auth/react';
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 
-function Register() {
+function Login() {
   
   const session = useSession();
   const router = useRouter();
@@ -15,6 +15,8 @@ function Register() {
     email: "",
     password: ""
   })
+
+  console.log(session)
 
   useEffect(() => {
     if(session?.status === 'authenticated') {
@@ -118,4 +120,4 @@ function Register() {
   )
 }
 
-export default Register;
+export default Login;
